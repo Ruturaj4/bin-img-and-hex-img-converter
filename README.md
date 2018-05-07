@@ -1,5 +1,5 @@
 # bin_hex_image
-#Conversion of bin and hex format to img format using matlab
+#Conversion of bin and hex format to img format using matlab (for median filter)
 
 Binary format to image format -
 Use bin_to_image.m for conversion
