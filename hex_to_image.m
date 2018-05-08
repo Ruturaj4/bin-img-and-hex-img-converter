@@ -1,11 +1,13 @@
 close all;
-fid1 = fopen('chrysler_noise.odata');
-B = fread(fid1, '*char');
-fclose(fid1);
 
-fid2 = fopen('chrysler_noise.odata');
-C = fread(fid2, '*char');
-fclose(fid2);
+%user prompt - to get the path or name of the image to be converted
+prompt = 'Please enter a image to be converted: ';
+str = input(prompt,'s');
+
+fid1 = fopen(str);
+B = fread(fid1, '*char');
+C = fread(fid1, '*char');
+fclose(fid1);
 
 len = length(B);
 
