@@ -3,6 +3,12 @@ close all;
 prompt = 'Please enter a image to be converted: ';
 str = input(prompt,'s');
 
+%Now get the image dimentions from the user
+prompt = 'Please enter Horizontal dimentions:';
+hori = input(prompt);
+prompt = 'Please enter Horizontal dimentions:';
+vert = input(prompt);
+
 %Open the bin file inputed by the user
 fid = fopen(str);
 
@@ -18,11 +24,13 @@ fclose(fid);
 
 B = B(1:l);
 
-B = reshape(B, [8, 279000]);
+dim = hori * vert;
+
+B = reshape(B, [8, dim]);
 
 B = B(1,:);
 
-C=reshape(B,465, 600);
+C=reshape(B, vert, hori);
 
 %J = imrotate(C,90,'bilinear','crop');
 
