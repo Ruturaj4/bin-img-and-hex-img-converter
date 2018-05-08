@@ -13,6 +13,7 @@ vert = input(prompt);
 %Open the bin file inputed by the user
 fid = fopen(str);
 
+%Read in the file
 B = fread(fid, '*uint8');
 
 %Close the file

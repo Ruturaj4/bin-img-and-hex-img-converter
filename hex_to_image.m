@@ -10,21 +10,24 @@ hori = input(prompt);
 prompt = 'Please enter Horizontal dimentions:';
 vert = input(prompt);
 
+%Open an hex image into a file
 fid1 = fopen(str);
+
+%Read in the file
 B = fread(fid1, '*char');
 fclose(fid1);
 
 len = length(B);
 
 B = reshape(B, [20,len/20]);
-C = B;
 
+%Array of zeros
 G = zeros((len/20),1);
 
 for i = 1:len/20
     %We need to consider 15th and 16th row, as they contain all the data
     E = B(15,i);
-    F = C(16,i);
+    F = B(16,i);
     
     D = strcat(E,F);
     G(i) = hex2dec(D);
