@@ -29,13 +29,15 @@ for i = 1:len/20
     E = B(15,i);
     F = B(16,i);
     
+    %Concatinating the two rows, to ultimately convet it into hex
     D = strcat(E,F);
     G(i) = hex2dec(D);
 end
 
 G = G(5:len/20);
 
-G = reshape(G, hori, vert);
+%Reshaping the image according the dimentions
+G = reshape(G, (hori-2), (vert-2));
 
 G = mat2gray(G);
 
