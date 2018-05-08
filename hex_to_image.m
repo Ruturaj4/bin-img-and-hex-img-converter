@@ -4,22 +4,25 @@ close all;
 prompt = 'Please enter a image to be converted: ';
 str = input(prompt,'s');
 
-fid1 = fopen('train_number.odata');
+%Now get the image dimentions from the user
+prompt = 'Please enter Horizontal dimentions:';
+hori = input(prompt);
+prompt = 'Please enter Horizontal dimentions:';
+vert = input(prompt);
+
+fid1 = fopen(str);
 B = fread(fid1, '*char');
 fclose(fid1);
-
-fid2 = fopen('train_number.odata');
-C = fread(fid2, '*char');
-fclose(fid2);
 
 len = length(B);
 
 B = reshape(B, [20,len/20]);
-C = reshape(C, [20,len/20]);
+C = B;
 
 G = zeros((len/20),1);
 
 for i = 1:len/20
+    %We need to consider 15th and 16th row, as they contain all the data
     E = B(15,i);
     F = C(16,i);
     
@@ -29,8 +32,7 @@ end
 
 G = G(5:len/20);
 
-length(G)
-G = reshape(G,98,61);
+G = reshape(G, hori, vert);
 
 G = mat2gray(G);
 
