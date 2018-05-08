@@ -4,10 +4,13 @@ close all;
 prompt = 'Please enter a image to be converted: ';
 str = input(prompt,'s');
 
-fid1 = fopen(str);
+fid1 = fopen('train_number.odata');
 B = fread(fid1, '*char');
-C = fread(fid1, '*char');
 fclose(fid1);
+
+fid2 = fopen('train_number.odata');
+C = fread(fid2, '*char');
+fclose(fid2);
 
 len = length(B);
 
@@ -27,15 +30,14 @@ end
 G = G(5:len/20);
 
 length(G)
-G = reshape(G,463,598);
+G = reshape(G,98,61);
+
 G = mat2gray(G);
 
+%Rotate by 90 d
 J = imrotate(G, -90);
 
+%Now flipping the image
+J = flip(J, 2);
+
 imshow(J)
-
-%C=reshape(B,465, 600);
-
-%J = imrotate(C,90,'bilinear','crop');
-
-%imshow(C);
