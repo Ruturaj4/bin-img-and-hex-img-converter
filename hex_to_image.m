@@ -1,9 +1,9 @@
 close all;
-fid1 = fopen('ku_eecs_743_median_filter_master_32_chrysler_noise_S_out.odata');
+fid1 = fopen('chrysler_noise.odata');
 B = fread(fid1, '*char');
 fclose(fid1);
 
-fid2 = fopen('ku_eecs_743_median_filter_master_32_chrysler_noise_S_out.odata');
+fid2 = fopen('chrysler_noise.odata');
 C = fread(fid2, '*char');
 fclose(fid2);
 
@@ -28,7 +28,9 @@ length(G)
 G = reshape(G,463,598);
 G = mat2gray(G);
 
-imshow(G)
+J = imrotate(G, -90);
+
+imshow(J)
 
 %C=reshape(B,465, 600);
 

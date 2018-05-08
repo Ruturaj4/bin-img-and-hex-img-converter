@@ -33,7 +33,7 @@ B = B(1,:);
 
 C=reshape(B, vert, hori);
 
-J = imrotate(C, -90);
+%J = imrotate(C,90,'bilinear','crop');
 
 %Show the image to the user
-imshow(J);
+imshow(C);
