@@ -29,14 +29,20 @@ B = B(25:l);
 %Calculated total size
 dim = hori * vert;
 
+%Reshape the matrix
 B = reshape(B, [8, dim]);
 
+%Select
 B = B(1,:);
 
+%Reshaping using image dimentions
 C=reshape(B, vert, hori);
 
-J = imrotate(C, 90);
-J = flip(J);
+%Rotate by 90 d
+J = imrotate(C, -90);
+
+%Now flipping the image
+J = flip(J, 2);
 
 %Show the image to the user
 imshow(J);
