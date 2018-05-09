@@ -5,9 +5,9 @@ prompt = 'Please enter a image to be converted: ';
 str = input(prompt,'s');
 
 %Now get the image dimentions from the user
-prompt = 'Please enter Horizontal dimentions:';
+prompt = 'Please enter Horizontal dimentions: ';
 hori = input(prompt);
-prompt = 'Please enter Horizontal dimentions:';
+prompt = 'Please enter Vertical dimentions: ';
 vert = input(prompt);
 
 %Open the bin file inputed by the user
