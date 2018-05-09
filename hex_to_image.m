@@ -47,4 +47,5 @@ J = imrotate(G, -90);
 %Now flipping the image
 J = flip(J, 2);
 
-imshow(J)
+imshow(J);
+
