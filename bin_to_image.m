@@ -1,13 +1,15 @@
+clear all;
 close all;
+clc;
 
 %user prompt - to get the path or name of the image to be converted
 prompt = 'Please enter a image to be converted: ';
 str = input(prompt,'s');
 
 %Now get the image dimentions from the user
-prompt = 'Please enter Horizontal dimentions: ';
+prompt = 'Please enter Horizontal dimention: ';
 hori = input(prompt);
-prompt = 'Please enter Vertical dimentions: ';
+prompt = 'Please enter Vertical dimention: ';
 vert = input(prompt);
 
 %Open the bin file inputed by the user
@@ -47,3 +49,5 @@ J = flip(J, 2);
 
 %Show the image to the user
 imshow(J);
+
+imwrite(J, [str(1, 1:length(str)-4) '_input.jpg']);
