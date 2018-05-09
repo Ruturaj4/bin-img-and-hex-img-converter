@@ -51,4 +51,5 @@ J = flip(J, 2);
 
 imshow(J);
 
+%Now writing the image into jpg format
 imwrite(J, [str(1, 1:length(str)-6) '_output.jpg']);
