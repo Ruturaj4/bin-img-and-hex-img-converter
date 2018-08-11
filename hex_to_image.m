@@ -31,7 +31,7 @@ for i = 1:len/20
     E = B(15,i);
     F = B(16,i);
     
-    %Concatinating the two rows, to ultimately convet it into hex
+    %Concatinating the two rows, to ultimately convet it into dec
     D = strcat(E,F);
     G(i) = hex2dec(D);
 end
